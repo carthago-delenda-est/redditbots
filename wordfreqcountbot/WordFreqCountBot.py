@@ -87,17 +87,15 @@ def produce_reddit_comment(username, search_target):
     
     return f"{line_0}\n\n{line_1}\n\n{table_headings}\n{table_row}\n{table_row_lines}\n\n{rows_omitted_line}\n\n{explain_line}"
 
-
-if __name__ == "__main__":
-    reddit = praw.Reddit(client_id=os.environ.get('WORDFREQCOUNTBOT_ID'),
+TARGETS = json.load(open('WordLists.json', 'r'))['lists']
+reddit = praw.Reddit(client_id=os.environ.get('WORDFREQCOUNTBOT_ID'),
                      client_secret=os.environ.get('WORDFREQCOUNTBOT_SECRET'),
                      user_agent='Script',
                      username="WordFreqCountBot",
                      password=os.environ.get('WORDFREQCOUNTBOT_PASSWORD')
                     )
 
-    TARGETS = json.load(open('WordLists.json', 'r'))['lists']
-
+if __name__ == "__main__":
     my_messages = [message for message in reddit.inbox.unread()]
 
     for message in my_messages:
