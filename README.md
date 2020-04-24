@@ -7,9 +7,10 @@ Listens for messages containing it's username, space, a word.  The bot then sear
 Example:
 
 Comment A - "Blah, blah blah"
-|
-|
- ----> Comment B - "u/WordFreqCountBot hello".  We say Comment B has invoked the bot to search the history of the author of Comment A for instances of the word 'hello'.  Plurals, with an 's', are also found, though the word as a substring of other words should not be.
+
+    ----> Comment B - "u/WordFreqCountBot hello".  
+    
+We say Comment B has invoked the bot to search the history of the author of Comment A for instances of the word 'hello'.  Plurals, with an 's', are also found, though the word as a substring of other words should not be.
 
 
 
